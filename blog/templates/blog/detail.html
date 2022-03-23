@@ -1,0 +1,17 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<div class="card w-50">
+    <div class="card-body">
+        <div class="card-title">
+            <a href="{{blog.url}}" target="_blank"><h2>{{blog.title}}</h2></a>
+            
+        </div>
+        <div class="card-subtitle">
+            <span>{{blog.date}}</span>
+        </div>
+        <div class="card-text">
+            <span>{{blog.description}}</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

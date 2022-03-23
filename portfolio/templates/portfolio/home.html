@@ -1,0 +1,39 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+    <h1>Jose's Portfolio</h1>
+    {% load static %}
+    <img src="{% static 'portfolio/wintersun.jpg' %}" alt="">
+
+    <a class="btn btn-secondary" href="{% url 'blog:all_blogs' %}">Blog</a>
+   
+    <br>
+    {% for project in projects %}
+    <div class="card w-50">
+        <div class="card-body">
+            <div class="card-title">
+                <h2>{{ project.title }}</h2>
+            </div>
+            
+    
+            <br>
+            <div class="card-text">
+                <span>{{ project.description }}</span>
+            </div>
+            
+            <br>
+            <div class="card-img-bot">
+                <img src="{{ project.image.url }}" alt="">
+            </div>
+            
+            {% if project.url %}
+            <a href="{{ project.url }}">Project Url</a>
+            {% endif %}     
+        </div>
+        
+        
+    </div>
+    <br>
+    <br>
+    {% endfor %}
+
+{% endblock %}
